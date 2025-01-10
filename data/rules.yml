@@ -1,0 +1,45 @@
+version: "3.1"
+
+rules:
+
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Greet the user
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Provide restaurant opening hours
+    steps:
+      - intent: check_opening_hours
+      - action: action_check_opening_hours
+
+  - rule: Check if the restaurant is open on a specific day and time
+    steps:
+      - intent: check_if_open
+      - action: action_check_if_open
+
+  - rule: List menu items
+    steps:
+      - intent: list_menu_items
+      - action: action_list_menu_items
+
+  - rule: Place an order
+    steps:
+      - intent: place_order
+      - action: action_place_order
+
+  - rule: Confirm pickup time
+    steps:
+      - intent: confirm_pickup_time
+      - action: utter_confirm_pickup_time
+
+  - rule: Provide delivery address
+    steps:
+      - intent: provide_delivery_address
+      - action: utter_ask_delivery_address
+      - action: utter_confirm_delivery
+

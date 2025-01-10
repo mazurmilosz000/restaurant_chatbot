@@ -1,0 +1,45 @@
+version: "3.1"
+
+stories:
+
+  # Check Opening Hours
+  - story: check opening hours
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: check_opening_hours
+      - action: action_check_opening_hours
+
+  # Check If Restaurant is Open
+  - story: check if open on specific date/time
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: check_if_open
+      - action: action_check_if_open
+
+  # List Menu Items
+  - story: list menu items
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: list_menu_items
+      - action: action_list_menu_items
+
+  # Place an Order with Confirmation
+  - story: place order
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: place_order
+      - action: action_place_order
+      - intent: affirm
+      - action: action_confirm_pickup_time
+
+#  # Place an Order with Delivery Address
+#  - story: place order with delivery
+#    steps:
+#      - intent: place_order
+#      - action: utter_clarify_order
+#      - intent: provide_delivery_address
+

@@ -1,0 +1,128 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: check_if_open
+  examples: |
+    - Are you open on [Monday](day)?
+    - Can I visit you on [Saturday](day)?
+    - Are you not closed on [Saturday](day)?
+    - Can I visit at [8 PM](time) on [Friday](day)?
+    - Is the restaurant open on [Friday](day)?
+
+- intent: check_opening_hours
+  examples: |
+    - What are your opening hours?
+    - What time do you open?
+    - When does the restaurant close?
+    - Tell me your business hours
+    - What time are you open until?
+    - What are the restaurant's opening hours?
+    - When do you start serving?
+    - What time do you close today?
+    - How late are you open tonight?
+    - Are you open in the evening?
+    - Can you tell me your working hours?
+    - What time do you open and close?
+    - How long are you open today?
+    - When do you open in the morning?
+    - Are you open in the afternoon?
+    - What is the closing time on weekdays?
+    - Is the restaurant open in the evening?
+    - Do you open early on weekends?
+    - What time does the kitchen close?
+    - Are you open during lunch hours?
+
+- intent: list_menu_items
+  examples: |
+    - What's on the menu?
+    - Can I see the menu?
+    - Show me your dishes
+    - What kind of food do you serve?
+    - Do you have any vegetarian options?
+    - List all your items, please
+
+- intent: place_order
+  examples: |
+    - I would like to order a [pizza](item)
+    - Can I get a [burger](item) [without tomatoes](modification)?
+    - I want to order [lasagne](item) [with extra cheese](modification)
+    - Can I have [tiramisu](item)?
+    - Can I get a [burger](item) [with no tomatoes](modification)?
+    - I'd like a [hot-dog](item), [no onions](modification), please
+    - Please prepare [spaghetti carbonara](item) for me
+
+- intent: confirm_pickup_time
+  examples: |
+    - When can I pick up my order?
+    - How long will it take to prepare the meal?
+    - What time will the food be ready?
+    - Let me know the pickup time
+
+- intent: provide_delivery_address
+  examples: |
+    - My address is [123 Main Street](address)
+    - Deliver it to [456 Elm Street, Apt 5](address)
+    - Can you send it to [789 Oak Avenue](address)?
+    - Here's my delivery address: [101 Pine St](address)
+    - Please deliver to [Apartment 3, 202 Maple Rd](address)
+    - Send it to [15 Baker St](address)
+
+- lookup: item |
+  examples: |
+    - lasagne
+    - pizza
+    - burger
+    - tiramisu
+    - hot-dog
+    - hotdog
+    - hot dog
+    - burger
+    - spaghetti carbonara

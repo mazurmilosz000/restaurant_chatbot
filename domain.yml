@@ -1,0 +1,103 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - check_if_open
+  - check_opening_hours
+  - list_menu_items
+  - place_order
+  - confirm_pickup_time
+  - provide_delivery_address
+
+entities:
+  - day
+  - time
+  - item
+  - modification
+  - address
+
+actions:
+  - action_check_if_open
+  - action_check_opening_hours
+  - action_list_menu_items
+  - action_place_order
+  - action_confirm_pickup_time
+
+slots:
+  day:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: day
+  time:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: time
+  item:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: item
+  modification:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: modification
+  address:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: address
+  preparation_time:
+    type: float
+    mappings:
+      - type: from_text
+
+responses:
+  utter_greet:
+    - text: "Hello! Welcome to our restaurant. How can I help you today?"
+
+  utter_goodbye:
+    - text: "Goodbye! Have a great day!"
+
+  utter_affirm:
+    - text: "Great! Let me help you with that."
+
+  utter_deny:
+    - text: "No problem. Let me know how else I can assist."
+
+  utter_check_if_open:
+    - text: "Our restaurant is open on {day} at {time}."
+    - text: "Sorry, we are closed on {day} at {time}."
+
+  utter_check_opening_hours:
+    - text: "We are open from 9 AM to 9 PM on weekdays and 10 AM to 10 PM on weekends."
+
+  utter_list_menu_items:
+    - text: "Here is our menu: Pizza, Burger, Salad, Spaghetti, and Sushi. Let me know what you'd like to order!"
+
+  utter_place_order:
+    - text: "Got it! Your order for {item} with {modification} has been placed."
+
+  utter_confirm_pickup_time:
+    - text: "Your order will be ready for pickup at {time}."
+
+  utter_provide_delivery_address:
+    - text: "Thanks! We'll deliver your order to {address}."
+
+  utter_clarify_order:
+    - text: "You ordered {item} with {modification}. Is that correct?"
+
+  utter_confirm_delivery:
+    - text: "Your order will be delivered shortly. Thank you!"
+
+  utter_ask_delivery_address:
+    - text: "Could you please provide the delivery address?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
